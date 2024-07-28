@@ -7,6 +7,13 @@ public class Box {
 		this.depth=depth;
 		this.height=height;
 	}
+	public Box(double side) {
+		//width=depth=height=side; Against DRY
+		this(side,side,side);//constructor chaining
+	}
+	public Box() {
+		this(100,100,100);//constructor chaining
+	}
 	public String getBoxDimensions() {
 		return "Box Dimensions:"+width+" "+depth+" "+height;
 	}
