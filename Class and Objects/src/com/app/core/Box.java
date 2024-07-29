@@ -14,6 +14,9 @@ public class Box {
 	public Box() {
 		this(100,100,100);//constructor chaining
 	}
+	public boolean isEqual(Box another) {
+		return this.width==another.width && this.depth==another.depth && this.height==another.height;
+	}
 	public String getBoxDimensions() {
 		return "Box Dimensions:"+width+" "+depth+" "+height;
 	}
