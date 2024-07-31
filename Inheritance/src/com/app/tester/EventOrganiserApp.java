@@ -12,7 +12,7 @@ public class EventOrganiserApp {
 	int counter=0;
 	boolean exit=false;
 	while(!exit) {
-		System.out.println("1.Register Student\n2.Register Faculty\n3.Display all Participants\n7.Exit\n");
+		System.out.println("1.Register Student\n2.Register Faculty\n3.Display all Participants\n4.Display particular Participant\n7.Exit\n");
 		System.out.println("Choose option:");
 		switch(sc.nextInt()) {
 		case 1:
@@ -47,6 +47,17 @@ public class EventOrganiserApp {
 			}
 				break;
 				
+		case 4:
+			System.out.println("Enter Seat number to display Participant:");
+			int index=sc.nextInt()-1;
+			if(index>=0 && index<counter) {
+				System.out.println(participants[index]);
+			}
+			else {
+				System.out.println("Invalid seat number");
+			}
+			break;
+			
 		case 7:
 			exit=true;
 			System.out.println("Exitting----->");
