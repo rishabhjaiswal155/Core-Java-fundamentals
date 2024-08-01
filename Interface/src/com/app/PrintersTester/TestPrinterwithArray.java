@@ -9,7 +9,13 @@ public class TestPrinterwithArray {
 
 	public static void main(String[] args) {
 		Printer[] printers= {new ConsolePrinter(),new NetworkPrinter(),new FilePrinter()};
-         for(Printer p:printers)
+         for(Printer p:printers) {
         	 p.print("This is Interface");
+        	 if(p instanceof FilePrinter) {
+            	 ((FilePrinter) p).close();
+             }else {
+            	 System.out.println("Not a Fileprinter");
+             }
 	}
+}
 }
