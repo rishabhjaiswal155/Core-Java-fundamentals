@@ -17,5 +17,9 @@ public class Student extends Person{
 		return super.toString()+" "+"graduated in"+" "+YOP+" "+"with course"+" "+course+" "+
 	                                      "having fees"+" "+fees+" "+"percentage"+" "+per;
 	}
+	
+	public void study() {
+		System.out.println(super.getFirstName()+" "+" of course "+course+" is Studying");
+	}
 
 }

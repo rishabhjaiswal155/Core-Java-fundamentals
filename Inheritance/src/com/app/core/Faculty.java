@@ -12,4 +12,10 @@ public String toString() {
 	return super.toString()+" "+" having experience of"+" "+experience+
 			    " "+"yrs"+" expert in"+" "+expertise;
 }
+	
+public void teach() {
+	System.out.println(super.getLastName()+" "+"having expertise in"+" "+expertise+" "+" is teaching");
+}
+
+
 }
