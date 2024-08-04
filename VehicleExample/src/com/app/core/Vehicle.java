@@ -3,14 +3,14 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 public class Vehicle {
 	private String chasisNo;
-	private String color;
+	private Color color;
 	private double price;
 	private Date mnf_date;
 	public static SimpleDateFormat sdf;
 	static {
 		sdf=new SimpleDateFormat("dd/MM/yyyy");
 	}
-	public Vehicle(String chasisNo, String color, double price, Date mnf_date) {
+	public Vehicle(String chasisNo, Color color, double price, Date mnf_date) {
 		super();
 		this.chasisNo = chasisNo;
 		this.color = color;
@@ -19,7 +19,7 @@ public class Vehicle {
 	}
 	@Override
 	public String toString() {
-		return "Vehicle [chasisNo=" + chasisNo + ", color=" + color + ", price=" + price + ", mnf_date=" + sdf.format(mnf_date)
+		return "Vehicle [chasisNo=" + chasisNo + ", color=" +color + ", price=" + price + ", mnf_date=" + sdf.format(mnf_date)
 				+ "]";
 	}
 }
