@@ -6,6 +6,7 @@ public class Vehicle {
 	private Color color;
 	private double price;
 	private Date mnf_date;
+	private DeliveryAddress address;
 	public static SimpleDateFormat sdf;
 	static {
 		sdf=new SimpleDateFormat("dd/MM/yyyy");
@@ -20,10 +21,19 @@ public class Vehicle {
 	public Vehicle(String chasisNo) {
 		this.chasisNo=chasisNo;
 	}
+	
+	public void linkDeliveryAddress(String city,String state,String country,String zipcode) {
+		 this.address=new DeliveryAddress(city, state, country, zipcode);
+	}
 	@Override
 	public String toString() {
+		StringBuilder sb=new StringBuilder("Delivery Address:");
+		if(address==null)
+			sb.append("Address Not yet linked");
+		else
+			sb.append(address);
 		return "Vehicle [chasisNo=" + chasisNo + ", color=" +color + ", price=" + price + ", mnf_date=" + sdf.format(mnf_date)
-				+ "]";
+				+ "]"+"\n" +sb;
 	}
 	
 	@Override
