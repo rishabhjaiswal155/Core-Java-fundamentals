@@ -17,9 +17,22 @@ public class Vehicle {
 		this.price = price;
 		this.mnf_date = mnf_date;
 	}
+	public Vehicle(String chasisNo) {
+		this.chasisNo=chasisNo;
+	}
 	@Override
 	public String toString() {
 		return "Vehicle [chasisNo=" + chasisNo + ", color=" +color + ", price=" + price + ", mnf_date=" + sdf.format(mnf_date)
 				+ "]";
+	}
+	
+	@Override
+	public boolean equals(Object o) {
+		System.out.println("In Vehical equals methods");
+		if(o instanceof Vehicle) {
+		Vehicle anotherVehicle=(Vehicle)o;
+		return this.chasisNo.equals(anotherVehicle.chasisNo);
+	}
+		return false;
 	}
 }
