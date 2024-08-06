@@ -11,7 +11,7 @@ public class ShowroomApp {
 			System.out.println("enter showroom capacity");
 			Vehicle[] showroom=new Vehicle[sc.nextInt()];
 			int counter=0;
-			System.out.println("1.Add vehicle\n2.Display all vehicles in showroom\n3.purchase a Vehicle\n10.Exit\n");
+			System.out.println("1.Add vehicle\n2.Display all vehicles in showroom\n3.purchase a Vehicle\n4.Display specific vehical details\n10.Exit\n");
 			boolean flag=false;
 			while(!flag) {
 				System.out.println("Enter choice");
@@ -51,6 +51,13 @@ public class ShowroomApp {
 						System.out.println("Vehicle is ready to dispatch");
 					}
 					break;
+					
+				case 4:
+					System.out.println("Enter chasis number to get  vehicle details");
+					Vehicle details=findByChasisNo(sc.next(),showroom);
+					System.out.println(details);
+					break;
+					
 					
 				case 10:
 					System.out.println("Exitting--->");
