@@ -53,4 +53,13 @@ public static Date validateDate(String mnf_Date) throws ParseException, VehicleV
     	throw new VehicleValidationException("manufacture Date is not in current financial year");
     return d1;
 }
+
+public static Vehicle findByChasisNo(String chasisNo,Vehicle[] showroom) throws VehicleValidationException {
+	Vehicle testVehicle=new Vehicle(chasisNo);
+	for(Vehicle v:showroom)
+		if(v!=null)
+			if(v.equals(testVehicle))
+				return v;
+	throw new VehicleValidationException("chasis number"+chasisNo+" not found in the showroom");
+}
 }

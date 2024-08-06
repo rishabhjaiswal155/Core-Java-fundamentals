@@ -4,13 +4,14 @@ import static com.app.utils.validateAllInputs.*;
 //import static com.app.core.Vehicle.sdf;
 //import com.app.core.Color;
 import com.app.core.Vehicle;
+import com.app.custom_exception.VehicleValidationException;
 public class ShowroomApp {
 	public static void main(String[] args) {
 		try(Scanner sc=new Scanner(System.in)){
 			System.out.println("enter showroom capacity");
 			Vehicle[] showroom=new Vehicle[sc.nextInt()];
 			int counter=0;
-			System.out.println("1.Add vehicle\n2.Display all vehicles in showroom\n10.Exit\n");
+			System.out.println("1.Add vehicle\n2.Display all vehicles in showroom\n3.purchase a Vehicle\n10.Exit\n");
 			boolean flag=false;
 			while(!flag) {
 				System.out.println("Enter choice");
@@ -34,6 +35,20 @@ public class ShowroomApp {
 						}
 					}else {
                        System.out.println("No Vehicles to display in Showroom");						
+					}
+					break;
+					
+				case 3:
+					System.out.println("Enter chasis number to purchase a vehicle");
+					Vehicle testVehicle=findByChasisNo(sc.next(),showroom);
+					System.out.println(testVehicle);
+					if(testVehicle.getAddress()!=null)
+						throw new VehicleValidationException("Vehicle chasis Number already sold");
+					else
+					{
+						System.out.println("Enter Delivery Address:city,state,country,zipcode");
+						testVehicle.linkDeliveryAddress(sc.next(), sc.next(),sc.next(),sc.next());
+						System.out.println("Vehicle is ready to dispatch");
 					}
 					break;
 					
