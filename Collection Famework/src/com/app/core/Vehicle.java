@@ -1,11 +1,21 @@
 package com.app.core;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
 public class Vehicle {
 	private String chasisNo;
 	private Color color;
 	private double price;
 	private Date mnf_Date;
+	private DeliveryAddress address;
+	
+	public DeliveryAddress getAddress() {
+		return address;
+	}
+	
+	public void linkDeliveryAddress(String city,String state,String country,String zipcode) {
+		this.address=new DeliveryAddress(city, state, country, zipcode);
+	}
 	public static SimpleDateFormat sdf;
 	static {
 		sdf=new SimpleDateFormat("dd-MM-yyyy");
@@ -21,11 +31,39 @@ public class Vehicle {
 		super();
 		this.chasisNo = chasisNo;
 	}
-
+	
+	public String getChasisNo() {
+		return chasisNo;
+	}
+	public void setChasisNo(String chasisNo) {
+		this.chasisNo = chasisNo;
+	}
+	public Color getColor() {
+		return color;
+	}
+	public void setColor(Color color) {
+		this.color = color;
+	}
+	public double getPrice() {
+		return price;
+	}
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	public Date getMnf_Date() {
+		return mnf_Date;
+	}
+	public void setMnf_Date(Date mnf_Date) {
+		this.mnf_Date = mnf_Date;
+	}
 	@Override
 	public String toString() {
-		return "Vehicle [chasisNo=" + chasisNo + ", color=" + color + ", price=" + price + ", mnf_Date=" + sdf.format(mnf_Date)
-				+ "]";
+		StringBuilder sb=new StringBuilder("DeliveryAddress: ");
+		if(address==null)
+			sb.append("Not yet linked!!!");
+		else
+			sb.append(address);
+		return "Vehicle [chasisNo=" + chasisNo + ", color=" + color + ", price=" + price + ", mnf_Date=" + sdf.format(mnf_Date)+ "]"+" "+sb;
 	}
 	@Override
 	public boolean equals(Object o) {
@@ -37,5 +75,44 @@ public class Vehicle {
 	}
 	return false;
 	}
-
+	
+	public class DeliveryAddress{
+		private String city;
+		private String state;
+		private String country;
+		private String zipcode;
+		public DeliveryAddress(String city, String state, String country, String zipcode) {
+			super();
+			this.city = city;
+			this.state = state;
+			this.country = country;
+			this.zipcode = zipcode;
+		}
+		public String getCity() {
+			return city;
+		}
+		public void setCity(String city) {
+			this.city = city;
+		}
+		
+		public DeliveryAddress(String city) {
+			super();
+			this.city = city;
+		}
+		
+		@Override
+		public boolean equals(Object o) {
+			DeliveryAddress delAdd=new DeliveryAddress(city);
+			if(o instanceof DeliveryAddress) {
+				delAdd=(DeliveryAddress)o;
+				return this.city.equals((delAdd).city);
+			}
+			return false;
+		}
+		@Override
+		public String toString() {
+			return "[city=" + city + ", state=" + state + ", country=" + country + ", zipcode="
+					+ zipcode + "]";
+		}
+	}
 }

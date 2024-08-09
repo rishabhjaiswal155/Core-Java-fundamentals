@@ -10,6 +10,6 @@ public double getAdditionalCost() {
 }
 @Override
 public String toString() {
-	return name().toUpperCase();
+	return name().toLowerCase();
 }
 }
