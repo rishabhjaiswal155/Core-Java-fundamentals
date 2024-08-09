@@ -18,6 +18,7 @@ public class Showroom {
         boolean exit=false;
         while(!exit) {
         	System.out.println("Enter choice:");
+        	try {
         	switch(sc.nextInt()) {
         	case 1:
         		System.out.println("Enter Vehicle Details: chasisNo,Color,price,Mnf_Date(dd-MM-yyyy)");
@@ -72,7 +73,7 @@ public class Showroom {
         		
         	case 8:
         		System.out.println("Enter the name of city to find details");
-        		//findVehicleByCity(sc.next(),showroom);
+        		findVehicleByCity(sc.next(),showroom);
         		break;
         	case 10:
         		System.out.println("Exitting Showroom Application---->");
@@ -82,6 +83,9 @@ public class Showroom {
         		default:
         			System.out.println("Invalid choice");
         			break;
+        	}
+        	}catch(Exception e) {
+        		e.printStackTrace();
         	}
         }
     }catch(Exception e) {

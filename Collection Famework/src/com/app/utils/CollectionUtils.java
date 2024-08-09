@@ -30,17 +30,12 @@ public class CollectionUtils {
 		}
 	}
 	}
-	
-//	public static void findVehicleByCity(String city,ArrayList<Vehicle> showroom) throws VehicleValidationException{
-//		
-//		for(Vehicle v:showroom) {
-//			Vehicle.DeliveryAddress delAdd=new Vehicle(v.getChasisNo()).new DeliveryAddress(city);
-//			if(v.getAddress()==null)
-//				throw new VehicleValidationException("Vehicle not yet sold!!!");
-//			else {
-//			        if(v.getAddress().getCity().equals(delAdd))
-//				        System.out.println(v.getChasisNo()+" "+v.getPrice());
-//				}		
-//	}
-//}
+	public static void findVehicleByCity(String city,ArrayList<Vehicle> showroom){	
+		for(Vehicle v:showroom) {
+			if(v.getAddress()!=null && v.getAddress().getCity().equals(city)) {
+				System.out.println("Vehicle chasis Number: "+v.getChasisNo()+" "+"Vehicle's price: "+v.getPrice());
+			}
+			}
+
+}
 }

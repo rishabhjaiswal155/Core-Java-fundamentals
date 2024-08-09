@@ -94,21 +94,6 @@ public class Vehicle {
 		public void setCity(String city) {
 			this.city = city;
 		}
-		
-		public DeliveryAddress(String city) {
-			super();
-			this.city = city;
-		}
-		
-		@Override
-		public boolean equals(Object o) {
-			DeliveryAddress delAdd=new DeliveryAddress(city);
-			if(o instanceof DeliveryAddress) {
-				delAdd=(DeliveryAddress)o;
-				return this.city.equals((delAdd).city);
-			}
-			return false;
-		}
 		@Override
 		public String toString() {
 			return "[city=" + city + ", state=" + state + ", country=" + country + ", zipcode="
