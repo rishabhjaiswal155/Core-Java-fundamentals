@@ -12,6 +12,8 @@ public class TestListIterator {
 			list.add(i);
 		System.out.println("ArrayList:"+list);
 		ListIterator<Integer> intItr=list.listIterator(list.size());
+		//list.add(35);//if we made any structural modification after creating itreator then it will not allow as it will give non-deterministic behavior.
+		//Thus throw exception concurrentModificationException
 		System.out.print("ArrayList in reverse order is:");
 		while(intItr.hasPrevious()) {
 			System.out.print(intItr.previous()+" ");
