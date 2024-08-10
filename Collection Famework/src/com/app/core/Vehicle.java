@@ -2,7 +2,7 @@ package com.app.core;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Vehicle {
+public class Vehicle implements Comparable<Vehicle>{
 	private String chasisNo;
 	private Color color;
 	private double price;
@@ -74,6 +74,12 @@ public class Vehicle {
 		return this.chasisNo.equals(newVehicle.chasisNo);
 	}
 	return false;
+	}
+	
+	@Override
+	public int compareTo(Vehicle v) {
+		System.out.println("In vehical's CompareTo");
+		return this.chasisNo.compareTo(v.chasisNo);
 	}
 	
 	public class DeliveryAddress{
