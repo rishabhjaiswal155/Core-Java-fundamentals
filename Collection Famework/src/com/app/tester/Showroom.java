@@ -9,6 +9,7 @@ import java.util.Collections;
 import java.util.Scanner;
 
 import com.app.core.Vehicle;
+import com.app.custom_ordering.VehiclePriceComparator;
 import com.app.customexception.VehicleValidationException;
 
 public class Showroom {
@@ -22,7 +23,8 @@ public class Showroom {
 					+ "5.Delete vehicle details of a specific vehicle\n"
 					+ "6.Apply discount to a vehicle by particulat color and having mnf_date before\n"
 					+ "7.purchase a vehicle\n8.Display chasisNo and price of vehicle dispatched to a particular city\n"
-					+ "10.sort Vehicles as per chasisNo in ascending order(Natural ordering)\n11.sort vehicles as per price in descending order(custom ordering)\n"
+					+ "10.sort Vehicles as per chasisNo in ascending order(Natural ordering)\n"
+					+ "11.sort vehicles as per price in descending order(custom ordering)\n"
 					+ "12.sort as per date and price in ascending order(custom ordering)\n"
 					+ "13.exit");
 			boolean exit = false;
@@ -89,6 +91,11 @@ public class Showroom {
 					case 10:
 						Collections.sort(showroom);
 						System.out.println("Sorted as per chasis number in ascending order!");
+						break;
+						
+					case 11:
+						Collections.sort(showroom,new VehiclePriceComparator());
+						System.out.println("Sorted as per price in descending order!");
 						break;
 
 					case 13:
