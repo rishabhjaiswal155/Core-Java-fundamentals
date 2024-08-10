@@ -18,6 +18,9 @@ public class CollectionUtils {
 		showroom.add(new Vehicle("pc-106",Color.GREY,validatePrice(555000),validateDate("24-07-2023")));
 		showroom.add(new Vehicle("pc-104",Color.RED,validatePrice(55000),validateDate("31-07-2023")));
 		showroom.add(new Vehicle("pc-112",Color.WHITE,validatePrice(585000),validateDate("26-10-2023")));
+		showroom.add(new Vehicle("pc-108",Color.GREY,validatePrice(557000),validateDate("24-07-2023")));
+		showroom.add(new Vehicle("pc-109",Color.RED,validatePrice(55800),validateDate("31-07-2023")));
+		showroom.add(new Vehicle("pc-111",Color.WHITE,validatePrice(595000),validateDate("26-10-2023")));
 		return showroom;
 	}
 	

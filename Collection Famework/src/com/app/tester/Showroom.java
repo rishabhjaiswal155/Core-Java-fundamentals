@@ -6,6 +6,7 @@ import static com.app.utils.ValidationRules.validatePrice;
 import static com.app.utils.CollectionUtils.*;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.Scanner;
 
 import com.app.core.Vehicle;
@@ -17,16 +18,14 @@ public class Showroom {
 	public static void main(String[] args) {
 		try (Scanner sc = new Scanner(System.in)) {
 			ArrayList<Vehicle> showroom = populatedShowroom();
-			System.out.println(
-					"1.Add Vehicle to showroom\n2.Display all Vehicles in showroom\n"
+			System.out.println("1.Add Vehicle to showroom\n2.Display all Vehicles in showroom\n"
 					+ "3.Display specific Vehicle from showroom\n4.Update price of specific vehicle\n"
 					+ "5.Delete vehicle details of a specific vehicle\n"
 					+ "6.Apply discount to a vehicle by particulat color and having mnf_date before\n"
 					+ "7.purchase a vehicle\n8.Display chasisNo and price of vehicle dispatched to a particular city\n"
 					+ "10.sort Vehicles as per chasisNo in ascending order(Natural ordering)\n"
 					+ "11.sort vehicles as per price in descending order(custom ordering)\n"
-					+ "12.sort as per date and price in ascending order(custom ordering)\n"
-					+ "13.exit");
+					+ "12.sort as per date and price in ascending order(custom ordering)\n" + "13.exit");
 			boolean exit = false;
 			while (!exit) {
 				System.out.println("Enter choice:");
@@ -87,15 +86,35 @@ public class Showroom {
 						System.out.println("Enter the name of city to find details");
 						findVehicleByCity(sc.next(), showroom);
 						break;
-					
+
 					case 10:
 						Collections.sort(showroom);
 						System.out.println("Sorted as per chasis number in ascending order!");
 						break;
-						
+
 					case 11:
-						Collections.sort(showroom,new VehiclePriceComparator());
+						Collections.sort(showroom, new VehiclePriceComparator());
 						System.out.println("Sorted as per price in descending order!");
+						break;
+
+					case 12:
+						Collections.sort(showroom, new Comparator<Vehicle>() {
+							@Override
+							public int compare(Vehicle v1, Vehicle v2) {
+								int value = v1.getMnf_Date().compareTo(v2.getMnf_Date());
+								if (value == 0) {
+//									if(v1.getPrice()<v2.getPrice())
+//										return -1;
+//									if(v1.getPrice()==v2.getPrice())
+//										return 0;
+//									return 1;
+//								}
+									return ((Double) v1.getPrice()).compareTo(v2.getPrice());
+								}
+								return value;
+							}
+						});
+						System.out.println("Sorted as per manufactured_Date and price in ascending order!");
 						break;
 
 					case 13:
