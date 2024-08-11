@@ -5,6 +5,7 @@ import static com.app.utils.ValidationRules.*;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 
 import com.app.core.Color;
 import com.app.core.Vehicle;
@@ -40,5 +41,14 @@ public class CollectionUtils {
 			}
 			}
 
+}
+	public static void removeVehicleByColor(String color,ArrayList<Vehicle> showroom) throws VehicleValidationException{
+		Color clr=validateColor(color);
+		Iterator<Vehicle> listItr=showroom.iterator();
+		while(listItr.hasNext()) {
+			if(listItr.next().getColor()==clr)
+				listItr.remove();
+			}
+		System.out.println("Vehicle details removed");
 }
 }

@@ -1,9 +1,10 @@
 package com.app.tester;
 
+import static com.app.utils.CollectionUtils.*;
 import static com.app.utils.ValidationRules.ValidateAllInputs;
 import static com.app.utils.ValidationRules.findByChasisNo;
 import static com.app.utils.ValidationRules.validatePrice;
-import static com.app.utils.CollectionUtils.*;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -25,7 +26,9 @@ public class Showroom {
 					+ "7.purchase a vehicle\n8.Display chasisNo and price of vehicle dispatched to a particular city\n"
 					+ "10.sort Vehicles as per chasisNo in ascending order(Natural ordering)\n"
 					+ "11.sort vehicles as per price in descending order(custom ordering)\n"
-					+ "12.sort as per date and price in ascending order(custom ordering)\n" + "13.exit");
+					+ "12.sort as per date and price in ascending order(custom ordering)\n" 
+					+"13.Delete the Vehicle details as per given Color\n"
+					+ "14.exit");
 			boolean exit = false;
 			while (!exit) {
 				System.out.println("Enter choice:");
@@ -116,8 +119,14 @@ public class Showroom {
 						});
 						System.out.println("Sorted as per manufactured_Date and price in ascending order!");
 						break;
-
+						
 					case 13:
+						System.out.println("Enter Color of Vehicle whose details is to be deleted");
+						removeVehicleByColor(sc.next(),showroom);
+						
+						break;
+
+					case 14:
 						System.out.println("Exitting Showroom Application---->");
 						System.exit(0);
 						break;
