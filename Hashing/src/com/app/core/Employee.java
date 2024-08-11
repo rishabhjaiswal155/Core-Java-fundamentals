@@ -27,6 +27,6 @@ public boolean equals(Object o) {
 @Override
 public int hashCode() {
 	System.out.println("In Employee's hashCode");
-	return 100;
+	return empId.hashCode();
 }
 }
