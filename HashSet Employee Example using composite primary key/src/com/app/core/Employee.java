@@ -16,6 +16,15 @@ public Employee(String empId, String name, double salary, int deptId, LocalDate 
 	this.deptId = deptId;
 	this.dob = dob;
 }
+
+public double getSalary() {
+	return salary;
+}
+
+public void setSalary(double salary) {
+	this.salary = salary;
+}
+
 @Override
 public String toString() {
 	return "Employee [empId=" + empId + ", name=" + name + ", salary=" + salary + ", deptId=" + deptId + ", dob=" + dob
