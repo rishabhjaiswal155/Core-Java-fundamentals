@@ -5,6 +5,7 @@ import static com.app.utils.BankAccountUtils.populateBankAccount;
 import static java.time.LocalDate.parse;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Scanner;
 
 import com.app.core.AcType;
@@ -22,7 +23,7 @@ public class BankApplication {
 						"Options:1.Create a account\n2.Display all accounts\n3.Display account summary for specific accountno\n"
 								+ "4.Transfer Funds\n5.close Account\n6.display account details "
 								+ "by AcType\n7.display account details by balance\n8."
-								+ "Remove all loan Accounts\n10.exit");
+								+ "Remove all loan Accounts\n9..exit");
 				System.out.println("Enter choice");
 				try {
 					switch (sc.nextInt()) {
@@ -85,8 +86,12 @@ public class BankApplication {
 						break;
 
 					case 8:
-//						accts.remove(AcType.LOAN);
-//						System.out.println("All Loan type of Accounts are removed");
+						Iterator<BankAccount> itr=accts.values().iterator();
+						System.out.println("Removing all Accounts of AcType LOAN");
+						while(itr.hasNext()) {
+							if(itr.next().getType()==AcType.LOAN)
+								itr.remove();
+						}
 						break;
 
 					case 9:
