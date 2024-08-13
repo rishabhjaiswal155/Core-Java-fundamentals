@@ -19,6 +19,33 @@ public class BankAccount {
 		this.creationDate = creationDate;
 		this.balance = balance;
 	}
+	
+	
+	public int getActNo() {
+		return actNo;
+	}
+
+
+	public String getCustomerName() {
+		return CustomerName;
+	}
+
+
+	public AcType getType() {
+		return type;
+	}
+
+
+	public LocalDate getCreationDate() {
+		return creationDate;
+	}
+
+
+	public double getBalance() {
+		return balance;
+	}
+
+
 	@Override
 	public String toString() {
 		return "BankAccount [actNo=" + actNo + ", CustomerName=" + CustomerName + ", type=" + type + ", creationDate="

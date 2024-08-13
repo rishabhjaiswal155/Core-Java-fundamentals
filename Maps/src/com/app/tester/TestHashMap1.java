@@ -1,6 +1,6 @@
 package com.app.tester;
 
-import static com.app.utils.PopulateBankAccount.populateBankAccount;
+import static com.app.utils.BankAccountUtils.populateBankAccount;
 
 import java.util.HashMap;
 
