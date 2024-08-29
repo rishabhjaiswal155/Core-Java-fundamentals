@@ -30,5 +30,17 @@ public class Test4 {
 	    		.filter(i->i%2!=0)
 				.average()
 				.ifPresent(a->System.out.println(a));
-	}
+
+	             //print average of odd numbers  between 10 and 50,if stream is empty  print -100 or else print average.	
+
+	             System.out.println("Average of odd numbers between 10-50");
+	             OptionalDouble d=IntStream
+	             .range(11, 50)
+	             .filter(i->i%2!=0)
+	             .average();
+	             if(d.isEmpty())
+	            	System.out.println(-100); 
+	             else
+	               System.out.println("Average="+d.getAsDouble()); 	 
+	             }
 }
