@@ -1,0 +1,6 @@
+-------------------for nginx deployment---------------
+sudo docker run --name rishabhjaiswal -d -p 8082:80 nginx
+------------------------transflower deployment----------------
+git clone https://github.com/RaviTambade/sittflstore.git
+sudo docker run --name rishabhjaiswal1 -d -p 8085:8000 dockerfile
+-----------------------------------------------------------------
