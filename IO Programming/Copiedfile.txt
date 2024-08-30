@@ -1,0 +1,27 @@
+-------------------for nginx deployment---------------
+sudo apt update
+sudo apt install docker.io
+sudo docker pull nginx
+sudo docker images
+sudo docker run --name rishabhjaiswal -d -p 8082:80 nginx
+sudo docker ps
+go back to browser copy ip address:8082
+o/p: welcome to nginx
+
+------------------------transflower deployment----------------
+git clone https://github.com/RaviTambade/sittflstore.git
+ls-->sittflstore
+cd sittfflstore
+ls 
+cd data
+ls --->products_data.json
+mv products_data.json products.json
+cd..
+sudo docker build -t "dockerfile" .
+sudo docker images
+sudo docker run --name rishabhjaiswal1 -d -p 8085:8000 dockerfile
+sudo docker ps
+go back to browser copy ip address:8085
+-----------------------------------------------------------------
+
+
