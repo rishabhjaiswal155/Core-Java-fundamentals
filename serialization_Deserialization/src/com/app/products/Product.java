@@ -6,10 +6,18 @@ import java.time.LocalDate;
 import com.app.category.Category;
 
 public class Product implements Serializable {
+	/**
+	 * 
+	 */
+	//private static final long serialVersionUID = 4080976658196480610L;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6364372261526304598L;
 	private int id;
 	private String name;
 	private Category category;
-	private LocalDate manufactureDate;
+	private transient LocalDate manufactureDate;
 	private double price;
 	public Product(int id, String name, Category category, LocalDate manufactureDate, double price) {
 		super();
