@@ -5,6 +5,7 @@ import static com.app.utils.DeserializeUtils.restoreProductDetails;
 public class TestDeserializationwithJAR {
 
 	public static void main(String[] args) {
+		
 		try(Scanner sc=new Scanner(System.in)){
 			System.out.println("Enter fileName");
 			System.out.println(restoreProductDetails(sc.nextLine()));
