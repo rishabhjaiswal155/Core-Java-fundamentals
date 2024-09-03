@@ -1,0 +1,6 @@
+Student [rollNo=DAC-104, name=Soham, dob=1995-03-29, subject=JAVA, cgpa=5.75]
+Student [rollNo=DAC-100, name=Rishabh, dob=1996-04-22, subject=JAVA, cgpa=6.75]
+Student [rollNo=DAC-105, name=Pranav, dob=1998-08-22, subject=CPP, cgpa=6.75]
+Student [rollNo=DAC-102, name=Shreyash, dob=2000-05-17, subject=REACT, cgpa=7.05]
+Student [rollNo=DAC-103, name=Vishal, dob=1999-09-19, subject=CSHARP, cgpa=7.85]
+Student [rollNo=DAC-101, name=Atharva, dob=2002-02-27, subject=DBT, cgpa=8.75]
