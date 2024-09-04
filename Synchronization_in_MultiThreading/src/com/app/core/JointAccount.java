@@ -13,7 +13,7 @@ public class JointAccount {
 		return "JointAccount [balance=" + balance + "]";
 	}
 	
-	public void updateBalance(double amount) throws InterruptedException {
+	public synchronized void updateBalance(double amount) throws InterruptedException {
 		System.out.println("updatation started by "+Thread.currentThread().getName());
 	    balance=balance+amount;
 	    System.out.println("Cancelling Update after a delay");
@@ -22,7 +22,7 @@ public class JointAccount {
 		System.out.println("updatation over by "+Thread.currentThread().getName());
 	}
 	
-	public double checkBalance() throws InterruptedException {
+	public synchronized double checkBalance() throws InterruptedException {
 		System.out.println("checkingBalance started by "+Thread.currentThread().getName()); 
 		Thread.sleep(37);
 		System.out.println("checkingBalance over by "+Thread.currentThread().getName());  
